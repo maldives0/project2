@@ -1,17 +1,27 @@
 @import url("common.css");
-%f18 {
+%f-18 {
     font-size: 18px;
     line-height: 24px;
     letter-spacing: -0.1em;
 }
-%f11 {
+%f-11 {
     font-size: 11px;
     line-height: 24px;
     letter-spacing: -0.1em;
     text-align:center;
-    display:inline;
-    text-transform:uppercase;
+   text-transform:uppercase;
     color:#bbbbbb;
+}
+%f-24{
+    font-size: 24px;
+    line-height: 24px;
+    letter-spacing: -0.1em;
+}
+%f-63 {
+    font-size: 4vw;
+    line-height: 1.3;
+    letter-spacing: -0.036em;
+    text-align:center;
 }
 header {
     position: absolute;
@@ -28,17 +38,24 @@ header {
         z-index: 1;
 
         .logo {
+            
             a {
-                @extend %f18;
+                @extend %f-18;
             }
         }
         nav {
             p {
                 a {
-                    @extend %f18;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    @extend %f-18;
                 }
                 a:after {
                     content: "";
+                    width:100%;
+                    position:absolute;
+                    bottom:0; left:0;
                     border-bottom: 1px solid #000;
                 }
             }
@@ -59,7 +76,7 @@ main {
         
             li {
                 img {
-                    width:100%;
+                    
                     height:100%;
                 }
             }
@@ -82,21 +99,58 @@ main {
     }
     .intro {
         width:90%;
-        margin:20vw auto 0;
+        margin:20vw auto;
         .hello {
-            width:100%;
+           width:100%;
             h4 {
                 
-           
-                @extend %f11;
+                @extend %f-11;
                
             }
         }
         .intro_m {
             h2 {
+                @extend %f-63;
             }
         }
+       }
         .content {
+            width:90%;
+            display:flex;
+            flex-wrap:wrap;
+            .c_1,
+            .c_2,
+            .c_4,
+            .c_5{
+                width:50%;
+                p{
+                    img{}
+                }
+                figcaption{
+                    div{
+                        h4{  @extend %f-11;
+                            a{ @extend %f-24;}
+                            span{@extend %f-24;}
+                        }
+                    }
+                }
+            }
+            .c_3,
+            .c_6{
+                width:100%;
+                p{
+                    img{}
+                }
+                figcaption{
+                    div{
+                        h4{   @extend %f-11;
+                            a{@extend %f-24;}
+                            span{@extend %f-24;}
+                        }
+                    }
+                }
+            }
+
         }
-    }
+    
 }
